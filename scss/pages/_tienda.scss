@@ -1,0 +1,152 @@
+@import "utilidades/variables";
+@import "utilidades/mixin";
+
+/* Agrega estilo al icono de carrito en el encabezado */
+.header-cart-icon {
+    color: #000000;
+    font-size: 2rem;
+    margin-right: 20px;
+    text-decoration: none;
+}
+.main-h2 {
+  margin-top: 5rem;
+  padding: 2rem;
+  font-size: 4rem;
+  text-align: center;
+}
+
+/* Separador */
+
+.discos-div-hr-abajo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.discos-div-hr-abajo {
+  width: 40%;
+}
+
+.discos-hr-biografia-abajo {
+  border: rgba(24, 24, 24, 1) solid 3px;
+  margin-bottom: 4rem;
+}
+
+/* clases del main discos */
+
+.main-discos {
+  width: 100%;
+  margin-top: 3rem;
+  @include flex(center, "center", "");
+  flex-wrap: wrap;
+}
+
+main .main-discos iframe {
+  opacity: 93%;
+  margin: 1rem;
+}
+
+// Cards
+
+$colors: (
+  0: rgba(10, 211, 37, 0.925),
+  1: rgba(255, 174, 0, 0.815),
+  2: rgba(28, 66, 44, 0.897),
+  3: rgba(34, 44, 5, 0.925),
+  4: rgba(201, 80, 58, 0.849),
+  5: rgba(82, 134, 143, 0.925),
+  6:rgba(241, 11, 11, 0.925),
+  7:rgba(222, 104, 14, 0.925),
+  8:rgba(205, 20, 134, 0.925)
+);
+
+@mixin cards($colorIndex) {
+    color: aliceblue;
+    width: 100%;
+    height: 100%;
+    max-width: 18rem;
+    display: flex;
+    flex-direction: column;
+    background-color: map-get($colors, $colorIndex);
+    border-radius: 5px;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 1rem;
+    
+    .card {
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+    
+    .card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+    
+    .card h5 {
+        font-size: 1.2rem;
+        margin: 10px 0;
+    }
+    
+    .card p {
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+    
+    .card button {
+        background-color: #0ddc06;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .card button:hover {
+        background-color: #1eea0b;
+    } }
+    .main-discos {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+.card-a18delsol {
+  @include cards(0);
+}
+
+.card-fuegogris {
+  @include cards(1);
+}
+
+.card-kamikaze {
+  @include cards(2);
+}
+
+.card-lalala {
+  @include cards(3);
+}
+
+.card-paralosarboles {
+  @include cards(4);
+}
+
+.card-pelusonofmilk {
+  @include cards(5);
+}
+
+.card-prive {
+  @include cards(6);
+}
+
+.card-mañana {
+  @include cards(7);
+}
+
+.card-donlucero {
+  @include cards(8);
+}

@@ -1,0 +1,115 @@
+//estilos generales para el body
+
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* estilo general del body */
+
+body {
+    background: linear-gradient(to left, $color-tercero, $color-cinco);
+    font-family: Verdana;
+    @include grid("", auto auto auto, "");
+
+    header {
+        grid-row: 1;
+        color: #000000;
+
+        .banner {
+            background-color: $color-segundo;
+            @include flex (space-between, center, "");
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom-left-radius: 5%;
+            border-bottom-right-radius: 5%;
+            border-bottom: 1px solid #000000;
+
+            .logo {
+
+                margin-left: 10px;
+
+                .logo-contenido {
+
+                    text-decoration: none;
+                    color: inherit;
+
+                    .logo-letra {
+                        font-size: 2rem;
+                    }
+                }
+
+            }
+
+            .nav-link {
+                transition: transform 0.3s;
+            }
+
+            .nav-link:hover {
+
+                color: black;
+                transform: scale(1.2);
+            }
+
+        }
+
+    }
+
+    main {
+        grid-row: 2;
+        color: black;
+    }
+
+    footer {
+        grid-row-start: 3;
+        grid-row-end: 4;
+        position: relative;
+        margin-top: 1rem;
+        left: 0;
+        background-color: $color-segundo;
+        bottom: 0;
+        width: 100%;
+        border-top-left-radius: 5%;
+        border-top-right-radius: 5%;
+        border-top: 1px solid #000000;
+        text-align: center;
+        color: #000000;
+
+        .footer-content {
+            @include flex(space-around, center, 1rem);
+          
+            .redes-sociales {
+                flex-wrap: wrap;
+               
+                a {
+                    margin-left: 0.25rem;
+                    img {
+                        width: 3rem;
+                        height: 3rem;
+                      }
+                    }
+                    
+              }
+              p {
+                text-align: center;
+                margin: 0;
+              }
+              
+
+           
+              
+          }
+          
+         
+          
+         
+          
+    }
+
+}

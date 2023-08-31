@@ -1,0 +1,43 @@
+
+
+//estilos para los 3 tipos de pantalla 
+//editando titulo 
+.titulo-discografia {
+    @extend %titulos;
+}
+
+
+/* contenido para pantalla de celular*/
+
+@media screen and (max-width:600px) {
+
+
+    .album {
+        @include grid (1fr, repeat(18, 22rem), 1rem);
+        margin: 1rem;
+    }
+
+
+}
+
+/* contenido para pantalla de tablet */
+@media screen and (min-width:600px) and (max-width:1024px) {
+
+    .album {
+        @include grid (1fr 1fr, repeat(9, 22rem), 1rem);
+        margin: 1rem;
+    }
+
+}
+
+
+/* contenido para pantalla de escritorio/desktop */
+@media screen and (min-width:1024px) {
+
+    .album {
+        @include grid (1fr 1fr 1fr, repeat(6, 30rem), 1rem);
+        margin: 1rem;
+    }
+
+}
+

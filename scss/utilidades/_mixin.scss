@@ -1,0 +1,47 @@
+//mixin con parametros
+
+//flex
+
+@mixin flex ($justify, $aling, $valor-gap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $aling;
+    gap: $valor-gap;
+}
+
+
+//grid
+
+@mixin grid ($columns , $rows , $gap) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    grid-gap: $gap;
+
+}
+
+//mixin sin parametro
+
+
+//caracteristicas del formulario
+
+@mixin formulario-box {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5%;
+    box-shadow: 3px 3px 3px 3px#202020;
+    color: black;
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+//boton
+
+@mixin button {
+    padding: 10px 20px;
+    background-color: $color-cinco;
+    color: #080101;
+    border: 1px 1px rgb(8, 8, 8);
+    cursor: pointer;
+}
+

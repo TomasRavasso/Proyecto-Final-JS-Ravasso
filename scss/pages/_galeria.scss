@@ -1,0 +1,72 @@
+// estilos generales para los 3 tipos de pantalla
+
+//editando el titulo 
+.titulo-galeria {
+    @extend %titulos;
+    margin-bottom: 2rem;
+}
+
+
+
+//edicion del contenido interno del carrusel 
+.carousel {
+    @include flex(center, center, "");
+    flex-direction: column;
+    background-color: #F5F1EE;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    height: auto;
+}
+
+.contenedor-decarousel {
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 1rem;
+
+}
+
+
+/* contenido para pantalla de celular */
+@media screen and (max-width:600px) {
+
+    //contenedor de los carruseles
+    .contenedor-decarousel {
+        @include grid(1fr, repeat(2, 1fr), 1rem)
+    }
+
+    //carrusel dos
+    .carruseldos {
+        display: none;
+    }
+
+}
+
+
+/* contenido para pantalla de tablet */
+
+@media screen and (min-width:600px) and (max-width:1024px) {
+
+    //contenedor de los carruseles
+    .contenedor-decarousel {
+        @include grid(repeat(2, 1fr), 1fr, 1rem);
+
+    }
+
+    // carrusel uno
+    .carruseluno {
+        display: none;
+    }
+}
+
+
+/*contenido para pantalla de escritorio/desktop */
+@media screen and (min-width:1024px) {
+
+    // contenedor de los carruseles 
+    .contenedor-decarousel {
+        @include grid (repeat(3, 1fr), "", 1rem);
+    }
+}
+
+

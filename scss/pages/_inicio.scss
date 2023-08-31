@@ -1,0 +1,132 @@
+// estilos para los 3 tipos de pantalla
+
+// titulo h1  biografia 
+.titulo-index-biografia {
+    @extend %titulos;
+}
+
+// titulo h2 exitos destacados 
+.titulo-exitos {
+    text-align: center;
+    margin: 2rem;
+}
+
+//contenido para distintos tipos de pantalla
+
+/* contenido para pantalla de celular */
+@media screen and (max-width:600px) {
+
+
+    //contenedor article y aside
+    .container-biografia {
+        margin-top: 1rem;
+        @include grid ("", "", 1);
+
+        .texto-biografia {
+            margin: 2rem;
+            grid-row: 2;
+            text-align: left;
+
+        }
+
+        .img-biografia {
+            grid-row: 1;
+
+            img {
+                max-width: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+    /* section para pantalla de celular INICIO */
+    .canciones {
+        @include grid (1, repeat(3, 33.33%), 1rem);
+        margin-bottom: 2rem;
+
+        // contenido del section
+        .cancion-tres,
+        .cancion-cinco,
+        .cancion-seis {
+            display: none;
+        }
+
+        .cancion-cuatro {
+            grid-row-start: 1;
+        }
+    }
+
+}
+
+
+
+@media screen and (min-width:600px) and (max-width:1240px) {
+
+
+    //contenedor div 
+    .container-biografia {
+        @include grid(1fr, "", 1rem);
+        margin-top: 2rem;
+        justify-items: center;
+        align-items: center;
+
+        .texto-biografia {
+            grid-row: 2;
+            margin-left: 2rem;
+            margin-right: 1rem;
+
+        }
+
+        .img-biografia {
+            grid-row: 1;
+
+            img {
+                max-width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    // contenedor section 
+    .canciones {
+        @include grid(repeat(2, 1fr), repeat(2, 10rem), 1rem);
+        margin: 1rem;
+
+        .cancion-uno,
+        .cancion-dos {
+            display: none;
+        }
+
+    }
+}
+
+
+/* contenido para pantalla de escritorio/desktop */
+@media screen and (min-width:1240px) {
+
+    //contenedor div 
+    .container-biografia {
+        @include grid (1fr 1fr, "", 1rem);
+        margin-top: 2rem;
+
+        .texto-biografia {
+            margin-left: 2rem;
+            grid-column: 1;
+
+        }
+
+        .img-biografia {
+            grid-column: 2;
+        }
+
+    }
+
+    /* contenedor section */
+    .canciones {
+        @include grid (repeat(3, 1fr), repeat(2, 10rem), 1rem);
+        margin: 1rem;
+    }
+}
+
+

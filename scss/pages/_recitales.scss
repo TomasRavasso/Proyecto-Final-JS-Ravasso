@@ -1,0 +1,106 @@
+// edicion de la lista general para los 3 tipos de pantalla 
+
+.titulo-recitales {
+    @extend %titulos;
+}
+
+
+// editando lista 
+
+.cuadro-enlistado {
+    background-color: $color-cinco;
+    border: 1px solid #000000;
+    height: 40rem;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            height: 5rem;
+            border-bottom: 2px solid #01030b;
+
+            a {
+                display: block;
+                color: $color-primero;
+                text-decoration: none;
+                text-align: center;
+                transition: transform 0.3s;
+                font-size: 1.2rem;
+                text-align: center;
+            }
+
+            a:hover {
+                color: rgb(0, 0, 0);
+
+            }
+        }
+    }
+
+}
+
+
+/* contenido para pantalla de celular */
+@media screen and (max-width:600px) {
+
+
+    .cuadro-enlistado {
+        margin: 1rem;
+    }
+
+
+    .imagen-escritorio {
+        display: none;
+    }
+
+}
+
+
+/* contenido para pantalla de tablet */
+@media screen and (min-width:600px) and (max-width:1024px) {
+
+
+
+    .cuadro-enlistado {
+
+        margin: 1rem 20% 1rem 20%;
+    }
+
+
+    .imagen-escritorio {
+        display: none;
+    }
+
+
+}
+
+
+/* contenido para pantalla de escritorio/desktop */
+@media screen and (min-width:1024px) {
+
+
+    /* contenedor div  */
+    .contenedor-recitales {
+        @include grid (1fr 1fr, "", 1rem);
+        grid-template-areas:
+            "imagen cuadro";
+
+        /* contenedor aside / lista */
+        .cuadro-enlistado {
+            grid-area: cuadro;
+            margin: 1rem;
+            width: auto;
+        }
+
+        /* contenedor article */
+        .imagen-escritorio img {
+            grid-area: imagen;
+            align-self: flex-end;
+            margin: 1rem;
+            width: 100%;
+            height: 40rem;
+        }
+
+    }
+
+}

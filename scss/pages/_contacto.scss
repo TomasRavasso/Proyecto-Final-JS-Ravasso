@@ -1,0 +1,93 @@
+//contenido general para los 3 tipos de pantalla
+
+//body contacto para que ocupe 100vh el main
+.body-contacto footer {
+    position: fixed;
+    bottom: 0;
+}
+
+//edicion del titulo h1 contacto
+.titulo-contacto {
+    @extend %titulos;
+}
+
+
+//editando el formulario / article */
+
+
+//contenedor del div 
+.container-contacto {
+    @include flex (center, center, "");
+    width: 100%;
+
+    textarea {
+        resize: none;
+    }
+
+    .formulario {
+        @include formulario-box;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            color: #030303;
+            background-color: #F5F1EE;
+            border: none;
+        }
+
+        button {
+            @include button;
+        }
+
+        button:hover {
+            background-color: $color-seis;
+        }
+
+
+
+    }
+
+
+
+}
+
+/* contenido para pantalla de celular */
+@media screen and (max-width:740px) {
+
+
+    .formulario {
+        width: 100%;
+    }
+
+}
+
+/* contenido para pantalla de tablet */
+@media screen and (min-width:740px) and (max-width:1024px) {
+
+
+    .formulario {
+        width: 80%;
+    }
+
+}
+
+/* contenido para pantalla de escritorio/desktop */
+@media screen and (min-width:1024px) {
+
+    .formulario {
+        width: 90vh;
+    }
+
+
+}
+

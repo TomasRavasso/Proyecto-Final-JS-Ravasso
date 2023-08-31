@@ -1,0 +1,20 @@
+//pagina styles principal de scss
+
+
+//import de utilidades
+@import 'utilidades/variables';
+@import 'utilidades/extend';
+@import 'utilidades/mixin';
+
+//import de general
+@import 'general/body';
+
+
+// import de pages
+@import 'pages/inicio';
+@import 'pages/recitales';
+@import 'pages/contacto';
+@import 'pages/albumes';
+@import 'pages/galeria';
+@import 'pages/tienda';
+@import 'pages/carrito';
